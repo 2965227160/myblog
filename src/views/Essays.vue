@@ -312,6 +312,7 @@ const getWeatherText = (weather) => {
 .essay-text {
   color: var(--text-secondary);
   font-size: 1rem;
+  white-space: pre-wrap;
   line-height: 1.8;
   margin-bottom: 1rem;
 }

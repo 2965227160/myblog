@@ -27,7 +27,7 @@
               <div class="stat-label">{{ t('about.yearsExperience') }}</div>
             </div>
             <div class="stat-item">
-              <div class="stat-number" data-count="1">0</div>
+              <div class="stat-number" data-count="3">0</div>
               <div class="stat-label">{{ t('about.essays') }}</div>
             </div>
           </div>
