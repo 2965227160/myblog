@@ -62,7 +62,7 @@ watch(() => route.path, (newPath) => {
 }, { immediate: true })
 
 const sections = [
-  { id: '/', icon: 'fas fa-home', label: 'nav.home' },
+  { id: '/home', icon: 'fas fa-home', label: 'nav.home' },
   { id: '/essays', icon: 'fas fa-briefcase', label: 'nav.essays' },
   { id: '/articles', icon: 'fas fa-code', label: 'nav.articles' },
   { id: '/versions', icon: 'fas fa-rocket', label: 'nav.versions' },

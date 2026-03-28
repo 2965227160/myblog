@@ -57,7 +57,7 @@ const messages = {
   'en-US': enUS
 }
 
-const savedLang = localStorage.getItem('portfolio-lang') || 'en-US'
+const savedLang = localStorage.getItem('portfolio-lang') || 'zh-CN'
 
 const i18n = createI18n({
   legacy: false,
