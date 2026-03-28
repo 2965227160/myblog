@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于",
+    "essays": "说说",
+    "introduction": "关于",
+    "skills": "技能",
+    "experience": "经历",
+    "projects": "项目",
+    "contact": "联系",
+    "articles": "文章",
+    "versions": "版本"
+  },
+  "hero": {
+    "greeting": "你好，我是 zhl",
+    "title": "全栈 & 运维",
+    "description": "如你所见，只是一位随处可见的程序员罢了。",
+    "getInTouch": "联系我",
+    "viewProjects": "查看项目",
+    "scrollDown": "向下滚动"
+  },
+  "about": {
+    "title": "关于我",
+    "description": "23年毕业于北京211，计算机科学与技术专业，拥有3年开发经验的全栈开发工程师，熟悉JavaScript、vue.js，熟悉C++、Java、Go，了解React框架。业余喜爱做饭、读书和搞音乐。我觉得，做一件事最好的状态就是充满热情的时候了，我也希望能永远保持充满热情的状态。",
+    "articles": "文章",
+    "yearsExperience": "年经验",
+    "essays": "说说"
+  },
+  "skills": {
+    "title": "技能",
+    "frontend": "前端",
+    "backend": "后端",
+    "tools": "工具和其他"
+  },
+  "experience": {
+    "title": "经历",
+    "current": "当前",
+    "seniorDeveloper": "高级全栈开发工程师",
+    "frontendDeveloper": "前端开发工程师",
+    "juniorDeveloper": "初级开发工程师",
+    "seniorDesc": "领导开发团队使用React和Node.js构建复杂的Web应用。开发高级用户界面并优化性能。实施微服务架构和CI/CD流水线。",
+    "seniorAchievement1": "领导5人开发团队",
+    "seniorAchievement2": "性能提升40%",
+    "seniorAchievement3": "部署20+生产应用",
+    "frontendDesc": "使用React和Vue.js开发交互式用户界面。致力于改善用户体验和性能优化。与设计师合作实现像素级精确的设计。",
+    "frontendAchievement1": "构建15+响应式网站",
+    "frontendAchievement2": "加载时间减少50%",
+    "juniorDesc": "使用HTML、CSS和JavaScript开发网站。学习Web开发的最佳实践。参与各种客户项目并积累现代Web技术经验。",
+    "juniorAchievement1": "完成30+项目",
+    "juniorAchievement2": "学习现代框架"
+  },
+  "projects": {
+    "title": "项目",
+    "ecommerce": "电子商务平台",
+    "ecommerceDesc": "完整的电子商务平台，集成支付功能和高级库存管理。",
+    "taskManagement": "任务管理应用",
+    "taskManagementDesc": "具有实时同步和现代设计的任务管理Web应用。",
+    "blog": "博客平台",
+    "blogDesc": "具有CMS功能和精美UI设计的现代博客平台。"
+  },
+  "contact": {
+    "title": "联系我",
+    "email": "邮箱",
+    "phone": "电话",
+    "location": "位置",
+    "locationValue": "中国，北京",
+    "namePlaceholder": "姓名",
+    "emailPlaceholder": "邮箱",
+    "subjectPlaceholder": "主题",
+    "messagePlaceholder": "消息",
+    "sendMessage": "发送消息",
+    "successMessage": "消息发送成功！",
+    "wechat": "微信"
+  },
+  "footer": {
+    "copyright": "© 2026 1%的灵感加上99%的汗水",
+    "builtWith": "保持热爱",
+    "by": "构建由",
+    "fetch": "同时感谢"
+  },
+  "lang": {
+    "switch": "切换语言",
+    "zh": "中文",
+    "en": "EN"
+  }
+}

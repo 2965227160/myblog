@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "essays": "Essays",
+    "introduction": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "articles": "Articles",
+    "versions": "Versions"
+  },
+  "hero": {
+    "greeting": "Hello, I'm zhl",
+    "title": "Full Stack & Operation",
+    "description": "Passionate developer creating exceptional digital experiences with modern technologies.",
+    "getInTouch": "Get In Touch",
+    "viewProjects": "View Projects",
+    "scrollDown": "Scroll Down"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "Graduated in 2023 from a certain 211 university in Beijing, majoring in Computer Science and Technology, a full-stack developer with 3 years of development experience, familiar with JavaScript, vue.js, proficient in C, Java, Go, and knowledgeable about the React framework. In my spare time, I enjoy cooking, reading, and making music. I believe that the best state of doing something is when you are full of passion, and I hope to always maintain a passionate state.",
+    "articles": "articles",
+    "yearsExperience": "Years Experience",
+    "essays": "articles"
+  },
+  "skills": {
+    "title": "Skills",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Tools & Others"
+  },
+  "experience": {
+    "title": "Experience",
+    "current": "Current",
+    "seniorDeveloper": "Senior Full Stack Developer",
+    "frontendDeveloper": "Frontend Developer",
+    "juniorDeveloper": "Junior Developer",
+    "seniorDesc": "Leading a team of developers in building complex web applications using React and Node.js. Developing advanced user interfaces and optimizing performance. Implementing microservices architecture and CI/CD pipelines.",
+    "seniorAchievement1": "Led team of 5 developers",
+    "seniorAchievement2": "Improved performance by 40%",
+    "seniorAchievement3": "Deployed 20+ production apps",
+    "frontendDesc": "Developed interactive user interfaces using React and Vue.js. Worked on improving user experience and performance optimization. Collaborated with designers to implement pixel-perfect designs.",
+    "frontendAchievement1": "Built 15+ responsive websites",
+    "frontendAchievement2": "Reduced load time by 50%",
+    "juniorDesc": "Developed websites using HTML, CSS, and JavaScript. Learned best practices in web development. Worked on various client projects and gained experience in modern web technologies.",
+    "juniorAchievement1": "Completed 30+ projects",
+    "juniorAchievement2": "Learned modern frameworks"
+  },
+  "projects": {
+    "title": "Projects",
+    "ecommerce": "E-Commerce Platform",
+    "ecommerceDesc": "A complete e-commerce platform with payment integration and advanced inventory management.",
+    "taskManagement": "Task Management App",
+    "taskManagementDesc": "A web application for task management with real-time synchronization and modern design.",
+    "blog": "Blog Platform",
+    "blogDesc": "A modern blog platform with CMS features and beautiful UI design."
+  },
+  "contact": {
+    "title": "Contact",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "locationValue": "Beijing, China",
+    "namePlaceholder": "Name",
+    "emailPlaceholder": "Email",
+    "subjectPlaceholder": "Subject",
+    "messagePlaceholder": "Message",
+    "sendMessage": "Send Message",
+    "successMessage": "Message sent successfully!",
+    "wechat": "Wechat"
+  },
+  "footer": {
+    "copyright": "© 2026 Comes up with a great idea",
+    "builtWith": "Built with passion and code",
+    "by": "By",
+    "fetch": "Thanks to"
+  },
+  "lang": {
+    "switch": "Switch Language",
+    "zh": "中文",
+    "en": "EN"
+  }
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "weather": "sunny",
+    "text": "今天做到说说模块了，这也是第一个用作测试用的说说，我的网站也快完成了。其实这个网站主要是做给我看的，但是如果真帮到了别人，将是我莫大的荣幸。",
+    "pic": ["https://test.fukit.cn/autoupload/f/z_RejYaAtgzGyF7j7NmhEdiO_OyvX7mIgxFBfDMDErs/20260326/xXj2/515X515/2.jpeg/webp","https://test.fukit.cn/autoupload/f/z_RejYaAtgzGyF7j7NmhEdiO_OyvX7mIgxFBfDMDErs/20260326/2uVI/768X667/1.jpg/webp"],
+    "time": "2026-03-26 21:30"
+  },
+  {
+    "id": 2,
+    "weather": "cloudy",
+    "text": "今天差不多完成了所有模块，再测试一下，明天估计就能发出去了。其实刚才玩3d游戏有点晕，这时候就该写一会代码缓缓。",
+    "pic": [],
+    "time": "2026-03-27 22:33"
+  }
+]
