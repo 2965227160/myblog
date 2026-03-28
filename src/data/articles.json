@@ -5,7 +5,7 @@
     "pic": "https://test.fukit.cn/autoupload/f/z_RejYaAtgzGyF7j7NmhEdiO_OyvX7mIgxFBfDMDErs/20260326/vbSi/401X241/cover.png/webp",
     "title": "如何理解KMP算法？",
     "intro": " 从暴力算法到KMP算法，较为详细的讲解KMP算法的概念，过程和代码，并在其中掺杂了作者自己的一些理解。",
-    "path": "/markdown/articles/1.md",
+    "path": "./markdown/articles/1.md",
     "tags": "算法基础,KMP算法,字符串,Go",
     "date": "2026-02-24",
     "author": "zhl"

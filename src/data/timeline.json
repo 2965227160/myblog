@@ -3,7 +3,7 @@
     "id": 1,
     "title": "version 1.0.0",
     "subtitle": "故事的开始",
-    "path": "/markdown/versions/1.md",
+    "path": "./markdown/versions/1.md",
     "icon": "fas fa-seedling",
     "color": "#86efac"
   }

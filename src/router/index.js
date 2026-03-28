@@ -33,7 +33,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/myblog'),
   routes,
   scrollBehavior(to, from, savedPosition) {
     // 如果有保存的位置（比如浏览器前进后退），就恢复到那个位置

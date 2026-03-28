@@ -33,7 +33,7 @@ marked.setOptions({
 // Load markdown content
 const loadMarkdown = async () => {
   try {
-    const response = await fetch('/markdown/introduction.md')
+    const response = await fetch('./markdown/introduction.md')
     if (response.ok) {
       const text = await response.text()
       markdownContent.value = marked.parse(text)

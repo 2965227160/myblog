@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 
-export function useRandomQuote(dataUrl = '/data/sentences.json') {
+export function useRandomQuote(dataUrl = './data/sentences.json') {
   const quote = ref(null)
   const loading = ref(false)
   const error = ref(null)
