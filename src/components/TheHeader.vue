@@ -10,13 +10,8 @@
       </div>
 
       <div class="nav-menu" :class="{ active: isMenuOpen }">
-        <router-link
-          v-for="section in sections"
-          :key="section.id"
-          :to="section.id"
-          class="nav-link"
-          :class="{ active: currentSection === section.id }"
-        >
+        <router-link v-for="section in sections" :key="section.id" :to="section.id" class="nav-link"
+          :class="{ active: currentSection === section.id }">
           <i :class="section.icon"></i>
           <span>{{ t(section.label) }}</span>
         </router-link>
@@ -52,13 +47,13 @@ const currentLang = ref(locale.value)
 const isDark = ref(true)
 const isScrolled = ref(false)
 const isMenuOpen = ref(false)
-const currentSection = ref('/')
+const currentSection = ref('/home')
 
 const currentTheme = computed(() => isDark.value ? 'dark' : 'light')
 
 // 监听路由变化，更新当前section
 watch(() => route.path, (newPath) => {
-  currentSection.value = newPath || '/'
+  currentSection.value = newPath === '/' ? '/home' : newPath
 }, { immediate: true })
 
 const sections = [

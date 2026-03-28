@@ -25,6 +25,10 @@ tar -czf best_wishes.tar.gz happiness.txt miracle.txt joy.txt
 scp best_wishes.tar.gz user@everyone:/share/all
 ```
 
+最后，这个项目是开源的，我放在了github:
+
+[2965227160/myblog](https://github.com/2965227160/myblog)
+
 ## 关于网站
 
 这个网站是在春节假期的时候，赶工做完的。本来是做了前后端和一个后台管理页，不过因为了解到服务器加域名的价格后，还是选择了做静态网页了，况且免费的静态网页托管也不少。
