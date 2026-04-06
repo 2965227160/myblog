@@ -19,7 +19,9 @@
     --green: #86efac;
     --bg-dark: #0f172a;
     --bg-darker: #020617;
-    --bg-card: #1e293b;
+    --bg-card-header: #1e293bd8;
+    --bg-card: #1e293b60;
+    --bg-article-card: #1e293b;
     --bg-hover: #334155;
     --border: #334155;
     --text-primary: #f1f5f9;
@@ -48,7 +50,9 @@
 [data-theme="light"] {
     --bg-dark: #ffffff;
     --bg-darker: #f8f9fa;
-    --bg-card: #ffffff;
+    --bg-card-header: #ffffffd8;
+    --bg-card: #ffffff60;
+    --bg-article-card: #ffffff;
     --bg-hover: #f1f3f5;
     --border: #e5e7eb;
     --text-primary: #1f2937;

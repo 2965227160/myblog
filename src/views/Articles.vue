@@ -161,12 +161,12 @@
     </div>
 
     <!-- Back to Home -->
-    <div class="back-to-home">
+    <!-- <div class="back-to-home">
       <router-link to="/" class="back-button">
         <i class="fas fa-arrow-left"></i>
         <span>返回首页</span>
       </router-link>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -452,7 +452,7 @@ watch([searchQuery, selectedCategory], () => {
 }
 
 .article-card {
-  background: var(--bg-card);
+  background: var(--bg-article-card);
   border: 1px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
@@ -681,7 +681,7 @@ watch([searchQuery, selectedCategory], () => {
   position: relative;
   width: 100%;
   max-width: 900px;
-  background: var(--bg-card);
+  background: var(--bg-article-card);
   border-radius: 16px;
   overflow: hidden;
   animation: slideIn 0.3s ease;

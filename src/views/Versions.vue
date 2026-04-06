@@ -79,7 +79,7 @@ const { t } = useI18n();
 // Import timeline data
 import timelineData from "@/data/timeline.json";
 
-const timelineItems = ref(timelineData);
+const timelineItems = ref([...timelineData].sort((a, b) => b.id - a.id));
 const markdownContents = ref({});
 const expandedItems = reactive({});
 const contentHeights = reactive({});

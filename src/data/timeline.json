@@ -6,5 +6,13 @@
     "path": "./markdown/versions/1.md",
     "icon": "fas fa-seedling",
     "color": "#86efac"
+  },
+  {
+    "id": 2,
+    "title": "version 1.0.1",
+    "subtitle": "小更小新",
+    "path": "./markdown/versions/2.md",
+    "icon": "fas fa-rocket",
+    "color": "#86efac"
   }
 ]

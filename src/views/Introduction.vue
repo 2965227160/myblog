@@ -9,12 +9,12 @@
     </section>
 
     <!-- Back to Home -->
-    <div class="back-to-home">
+    <!-- <div class="back-to-home">
       <router-link to="/" class="back-button">
         <i class="fas fa-arrow-left"></i>
         <span>返回首页</span>
       </router-link>
-    </div>
+    </div> -->
   </div>
 </template>
 

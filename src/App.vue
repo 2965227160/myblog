@@ -10,7 +10,7 @@
 import TheHeader from './components/TheHeader.vue'
 import LoadingScreen from './components/LoadingScreen.vue';
 console.log("你打开了控制台(っ´ω`c)，你想知道什么秘密呢？")
-console.log("你可以直接从以下网址找到这个项目，而不必以这样的方式搜寻一些什么：https://github.com/2965227160/myblog")
+console.log("你可以直接从以下网址找到这个项目，或者从首页找到我的联系方式：https://github.com/2965227160/myblog")
 </script>
 
 <style>

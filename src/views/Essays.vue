@@ -1,5 +1,13 @@
 <template>
   <div class="essays-page">
+    <!--@click="refreshBackground" -->
+    <div class="page-background">
+      <img 
+        :src="backgroundImage" 
+        alt="Background" 
+      />
+      <div class="background-overlay"></div>
+    </div>
     <!-- Essays List -->
     <section class="essays-section">
       <div class="essays-container">
@@ -90,14 +98,12 @@
         <img :src="previewImage" alt="Preview" />
       </div>
     </div>
-
-    <!-- Back to Home -->
-    <div class="back-to-home">
+    <!-- <div class="back-to-home">
       <router-link to="/" class="back-button">
         <i class="fas fa-arrow-left"></i>
         <span>返回首页</span>
       </router-link>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -115,6 +121,13 @@ const essays = ref(
 const currentPage = ref(1);
 const itemsPerPage = 10;
 const previewImage = ref(null);
+
+// Background image
+const backgroundImage = ref('https://t.alcy.cc/pc');
+
+const refreshBackground = () => {
+  backgroundImage.value = `https://t.alcy.cc/pc?t=${Date.now()}`;
+};
 
 // Calculate total pages
 const totalPages = computed(() => {
@@ -178,8 +191,40 @@ const getWeatherText = (weather) => {
 <style scoped>
 .essays-page {
   min-height: 100vh;
-  background: var(--bg-dark);
   padding-top: 80px;
+  position: relative;
+}
+
+/* Background Styles */
+.page-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.page-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+
+.page-background img:hover {
+  opacity: 0.85;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 /* Page Hero */
@@ -255,7 +300,7 @@ const getWeatherText = (weather) => {
 .card-header {
   padding: 1rem 1.5rem;
   border-bottom: 1px solid var(--border);
-  background: var(--bg-darker);
+  background: var(--bg-card-header);
 }
 
 .header-info {

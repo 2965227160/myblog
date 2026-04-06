@@ -4,10 +4,43 @@
     "category": "算法",
     "pic": "https://test.fukit.cn/autoupload/f/z_RejYaAtgzGyF7j7NmhEdiO_OyvX7mIgxFBfDMDErs/20260326/vbSi/401X241/cover.png/webp",
     "title": "如何理解KMP算法？",
-    "intro": " 从暴力算法到KMP算法，较为详细的讲解KMP算法的概念，过程和代码，并在其中掺杂了作者自己的一些理解。",
+    "intro": "从暴力算法到KMP算法，较为详细的讲解KMP算法的概念，过程和代码，并在其中掺杂了作者自己的一些理解。",
     "path": "./markdown/articles/1.md",
     "tags": "算法基础,KMP算法,字符串,Go",
     "date": "2026-02-24",
+    "author": "zhl"
+  },
+  {
+    "id": 2,
+    "category": "后端",
+    "pic": "https://test.fukit.cn/autoupload/f/z_RejYaAtgzGyF7j7NmhEdiO_OyvX7mIgxFBfDMDErs/20260406/03jC/620X309/cover1.png/webp",
+    "title": "如何使后端接入支付宝？",
+    "intro": "Go语言接入支付宝的方法，包括调起支付，付款后的通知和验签，下发奖励的若干步骤。",
+    "path": "./markdown/articles/2.md",
+    "tags": "后端,支付,Go",
+    "date": "2026-03-23",
+    "author": "zhl"
+  },
+  {
+    "id": 3,
+    "category": "杂谈",
+    "pic": "https://test.fukit.cn/autoupload/f/z_RejYaAtgzGyF7j7NmhEdiO_OyvX7mIgxFBfDMDErs/20260406/wqmC/700X700/w700d1q75cms.jpg/webp",
+    "title": "什么是费曼学习法？",
+    "intro": "我比较喜欢的学习方法，提炼出来就是四个字，‘教学相长’。",
+    "path": "./markdown/articles/3.md",
+    "tags": "学习法",
+    "date": "2026-03-30",
+    "author": "zhl"
+  },
+  {
+    "id": 4,
+    "category": "书评",
+    "pic": "https://test.fukit.cn/autoupload/f/z_RejYaAtgzGyF7j7NmhEdiO_OyvX7mIgxFBfDMDErs/20260406/h1oT/800X800/119406390_p0.jpg/webp",
+    "title": "《弹丸论破雾切》读书茶话会",
+    "intro": "雾切响子，一个女侦探，这部书讲述了她的前传。",
+    "path": "./markdown/articles/4.md",
+    "tags": "书评",
+    "date": "2026-02-10",
     "author": "zhl"
   }
 ]
