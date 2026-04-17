@@ -46,38 +46,51 @@
                 d="M235.4 9.3C246.5-2.5 265.1-3.2 277 7.9s12.5 29.8 1.4 41.6l-43 46c21.5 3.3 42.1 11.8 59.1 25.6l74.6 60.3c12.6 10.2 14.6 28.8 4.4 41.4s-28.7 14.6-41.4 4.4l-74.6-60.3c-26.2-21.1-71.9-18.2-94.5 5.9L81 261c-21.5 23-19.1 60 5.6 84.2l91.2 89.4c24.9 24 65.6 24 90.1-.4l51.1-51c11.5-11.5 30.1-11.5 41.6 .1s11.4 30.2-.1 41.7l-51.1 51c-47.1 47.1-124 47.7-171.9 1.6l-92-90.2C-1.4 341.3-6 267.9 38 220.7L235.4 9.3zM411.7 273.2c16.2 0 29.4 13.2 29.4 29.5s-13.2 29.5-29.4 29.5l-216.9 0c-16.2 0-29.4-13.2-29.4-29.5s13.2-29.5 29.4-29.5l216.9 0z" />
             </svg>
           </a>
+          <a href="https://blog.csdn.net/qq_55389115" class="social-icon" title="Csdn">
+            <svg t="1776440481725" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              p-id="5687" width="16" height="16">
+              <path
+                d="M229.12 841.92c-170.88-237.76-46.4-629.12 236.16-716.8 118.4-38.08 262.72-16.96 351.36 74.24 48.64 43.2 1.28 102.4-24.96 141.76-81.92-62.4-179.2-143.04-289.92-102.08C303.36 310.4 232 593.28 338.24 764.8c128 141.44 358.08 94.08 488.64-20.48 42.88 37.12 88.96 112.32 24.64 153.92-182.4 120.96-474.24 120-622.4-56.32z">
+              </path>
+            </svg>
+          </a>
         </div>
       </div>
-
-      <div class="hero-image-wrapper">
-        <div class="hero-image-container">
-          <div class="profile-image-glow"></div>
-          <div class="profile-image-frame">
-            <div class="profile-image">
-              <div class="profile-placeholder">
-                <i class="fas fa-code"></i>
+      <div class="updown">
+        <div class="hero-image-wrapper">
+          <SpineAnimation json-path="/myblog/src/assets/anime/kv42.json"
+            atlas-path="/myblog/src/assets/anime/kv42.atlas" :scale="0.25" :loop="true" in="in" keep="loop3" />
+        </div>
+        <div class="hero-image-wrapper2">
+          <div class="hero-image-container">
+            <div class="profile-image-glow"></div>
+            <div class="profile-image-frame">
+              <div class="profile-image">
+                <div class="profile-placeholder">
+                  <i class="fas fa-code"></i>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="floating-badge badge-1">
-            <i class="fa-brands fa-vuejs"></i>
-            <div class="badge-content">
-              <span class="badge-title">Vue.js</span>
-              <span class="badge-libs">Vite, Vue2, Vue3</span>
+            <div class="floating-badge badge-1">
+              <i class="fa-brands fa-vuejs"></i>
+              <div class="badge-content">
+                <span class="badge-title">Vue.js</span>
+                <span class="badge-libs">Vite, Vue2, Vue3</span>
+              </div>
             </div>
-          </div>
-          <div class="floating-badge badge-2">
-            <i class="fa-brands fa-java"></i>
-            <div class="badge-content">
-              <span class="badge-title">Java</span>
-              <span class="badge-libs">SpringBoot</span>
+            <div class="floating-badge badge-2">
+              <i class="fa-brands fa-java"></i>
+              <div class="badge-content">
+                <span class="badge-title">Java</span>
+                <span class="badge-libs">SpringBoot</span>
+              </div>
             </div>
-          </div>
-          <div class="floating-badge badge-3">
-            <i class="fa-brands fa-golang"></i>
-            <div class="badge-content">
-              <span class="badge-title">Go</span>
-              <span class="badge-libs">Gin, Gorm</span>
+            <div class="floating-badge badge-3">
+              <i class="fa-brands fa-golang"></i>
+              <div class="badge-content">
+                <span class="badge-title">Go</span>
+                <span class="badge-libs">Gin, Gorm</span>
+              </div>
             </div>
           </div>
         </div>
@@ -97,6 +110,7 @@
 import { ref, onMounted, nextTick, onBeforeUnmount, onActivated } from 'vue'
 import { useI18n } from 'vue-i18n'
 import anime from 'animejs'
+import SpineAnimation from './SpineAnimation.vue'
 import { onBeforeRouteLeave } from 'vue-router'
 const emit = defineEmits(['goto-contact', 'goto-projects'])
 const handleGetInTouch = () => {

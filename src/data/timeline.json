@@ -14,5 +14,13 @@
     "path": "./markdown/versions/2.md",
     "icon": "fas fa-rocket",
     "color": "#86efac"
+  },
+  {
+    "id": 3,
+    "title": "version 1.0.2",
+    "subtitle": "让主页灵动起来",
+    "path": "./markdown/versions/3.md",
+    "icon": "fas fa-rocket",
+    "color": "#86efac"
   }
 ]
