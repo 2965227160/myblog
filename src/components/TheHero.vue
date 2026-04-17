@@ -58,8 +58,8 @@
       </div>
       <div class="updown">
         <div class="hero-image-wrapper">
-          <SpineAnimation json-path="/myblog/src/assets/anime/kv42.json"
-            atlas-path="/myblog/src/assets/anime/kv42.atlas" :scale="0.25" :loop="true" in="in" keep="loop3" />
+          <SpineAnimation :json-path="`${baseurl}/anime/kv42.json`" :atlas-path="`${baseurl}/anime/kv42.atlas`"
+            :scale="0.25" :loop="true" in="in" keep="loop3" />
         </div>
         <div class="hero-image-wrapper2">
           <div class="hero-image-container">
@@ -112,6 +112,7 @@ import { useI18n } from 'vue-i18n'
 import anime from 'animejs'
 import SpineAnimation from './SpineAnimation.vue'
 import { onBeforeRouteLeave } from 'vue-router'
+const baseurl = import.meta.env.BASE_URL
 const emit = defineEmits(['goto-contact', 'goto-projects'])
 const handleGetInTouch = () => {
   emit('goto-contact')
