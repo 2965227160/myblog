@@ -375,7 +375,8 @@ img {
     }
 
     .lang-toggle,
-    .theme-toggle {
+    .theme-toggle,
+    .theme-color-btn {
         padding: 0.5rem 0.8rem;
         font-size: 0.8rem;
     }
@@ -469,6 +470,7 @@ img {
 
 .lang-toggle,
 .theme-toggle,
+.theme-color-btn,
 .menu-toggle {
     background: var(--bg-card);
     border: 1px solid var(--border);
@@ -484,10 +486,31 @@ img {
 }
 
 .lang-toggle:hover,
-.theme-toggle:hover {
+.theme-toggle:hover,
+.theme-color-btn:hover {
     background: var(--bg-hover);
     border-color: var(--primary);
     color: var(--primary);
+}
+
+.theme-color-btn:hover {
+    background: var(--bg-hover);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.theme-color-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
 }
 
 .menu-toggle {
@@ -941,7 +964,7 @@ img {
 
 .scroll-indicator {
     position: absolute;
-    bottom: 3rem;
+    bottom: 9rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -2116,7 +2139,8 @@ img {
     }
 
     .lang-toggle,
-    .theme-toggle {
+    .theme-toggle,
+    .theme-color-btn {
         padding: 0.5rem 0.8rem;
         font-size: 0.8rem;
     }

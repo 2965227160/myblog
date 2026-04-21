@@ -1,6 +1,11 @@
 <template>
   <section id="hero" class="hero-section">
 
+    <!-- 光圈扩散遮罩 -->
+    <div class="spotlight-overlay" ref="spotlightRef" v-show="spotlightVisible">
+      <div class="spotlight-glow" ref="spotlightGlowRef"></div>
+    </div>
+
     <div class="hero-container">
       <div class="hero-content">
         <div class="hero-greeting">
@@ -58,7 +63,7 @@
       </div>
       <div class="updown">
         <div class="hero-image-wrapper">
-          <SpineAnimation :json-path="`${baseurl}/anime/kv42.json`" :atlas-path="`${baseurl}/anime/kv42.atlas`"
+          <SpineAnimation ref="spineRef" :json-path="`${baseurl}/anime/kv42.json`" :atlas-path="`${baseurl}/anime/kv42.atlas`"
             :scale="0.25" :loop="true" in="in" keep="loop3" />
         </div>
         <div class="hero-image-wrapper2">
@@ -118,12 +123,16 @@ const handleGetInTouch = () => {
   emit('goto-contact')
 }
 
-// 处理“查看项目”按钮点击
+// 处理"查看项目"按钮点击
 const handleViewProjects = () => {
   emit('goto-projects')
 }
 const { t } = useI18n()
 const heroName = ref(null)
+const spotlightRef = ref(null)
+const spotlightGlowRef = ref(null)
+const spotlightVisible = ref(true)
+const spineRef = ref(null)
 
 const scrollDown = () => {
   // Scroll to next section
@@ -140,7 +149,80 @@ const calculateSectionOffset = (index) => {
   return window.innerHeight * index + paddingPerSection
 }
 
+// 光圈扩散动画
+const playSpotlight = () => {
+  if (!spotlightRef.value) return
+  spotlightVisible.value = true
+
+  // 计算 spine 动画在 hero section 中的中心位置（百分比）
+  const spineWrapper = document.querySelector('.hero-image-wrapper')
+  const heroSection = document.querySelector('.hero-section')
+  let cx = 65
+  let cy = 70
+  if (spineWrapper && heroSection) {
+    const sr = spineWrapper.getBoundingClientRect()
+    const hr = heroSection.getBoundingClientRect()
+    cx = ((sr.left + sr.width / 2 - hr.left) / hr.width) * 100 + 4
+    cy = ((sr.top + sr.height / 2 - hr.top) / hr.height) * 100 - 10
+  }
+
+  const blurWidth = 50 // 边缘模糊过渡宽度
+  const startRadius = 120 // 初始光圈半径
+  const endRadius = Math.max(window.innerWidth, window.innerHeight) * 1.5
+
+  // 更新 mask：radial-gradient 从 transparent 到 black 实现边缘模糊
+  const setMask = (radius) => {
+    if (!spotlightRef.value) return
+    const innerR = Math.max(0, radius - blurWidth)
+    const mask = `radial-gradient(circle ${radius}px at ${cx}% ${cy}%, transparent ${innerR}px, black ${radius}px)`
+    spotlightRef.value.style.webkitMaskImage = mask
+    spotlightRef.value.style.maskImage = mask
+  }
+
+  // 定位发光环元素到光圈中心
+  if (spotlightGlowRef.value) {
+    spotlightGlowRef.value.style.left = `${cx}%`
+    spotlightGlowRef.value.style.top = `${cy}%`
+  }
+
+  setMask(startRadius)
+
+  // 使用 anime.js 驱动半径动画
+  anime({
+    targets: { radius: startRadius },
+    radius: endRadius,
+    delay: 600, // 等 800ms 后开始扩散，让 spine 先展示一会
+    duration: 1000,
+    easing: 'easeInOutCubic',
+    update: (anim) => {
+      const r = anim.animations[0].currentValue
+      setMask(r)
+
+      // 同步更新发光环大小和透明度
+      if (spotlightGlowRef.value) {
+        const size = r * 2
+        spotlightGlowRef.value.style.width = `${size}px`
+        spotlightGlowRef.value.style.height = `${size}px`
+        const progress = (r - startRadius) / (endRadius - startRadius)
+        spotlightGlowRef.value.style.opacity = Math.max(0, 1 - progress * 1.2)
+      }
+    },
+    complete: () => {
+      spotlightVisible.value = false
+    }
+  })
+}
+
 const playAnime = () => {
+  // 重置 Spine 动画：先播 in 入场动画，完成后自动循环 keep
+  if (spineRef.value && typeof spineRef.value.restart === 'function') {
+    spineRef.value.restart()
+  }
+
+  // 先触发光圈扩散
+  playSpotlight()
+
+  // 其余入场动画按时播放（光圈会逐步揭开内容）
   anime({
     targets: '.hero-title',
     opacity: [0, 1],
@@ -198,8 +280,7 @@ const playAnime = () => {
   })
 }
 const resetAnime = () => {
-  // 1. 停止所有相关动画
-  // 使用选择器字符串可以一次性清除该类下所有元素的动画
+  // 停止所有相关动画
   anime.remove('.hero-title');
   anime.remove('.hero-description');
   anime.remove('.hero-buttons .btn');
@@ -207,75 +288,76 @@ const resetAnime = () => {
   anime.remove('.profile-image');
   anime.remove('.floating-badge');
 
-  // 2. 定义重置配置的辅助函数
-  // 这样代码更整洁，避免重复写 style 赋值
   const setStyles = (selector, styles) => {
     const elements = document.querySelectorAll(selector);
     elements.forEach(el => {
       Object.assign(el.style, styles);
-      el.style.transition = 'none'; // 关键：防止 CSS transition 干扰
+      el.style.transition = 'none';
     });
   };
 
-  // 3. 应用初始状态
-
-  // Hero Title: opacity 0, translateX -30px
   setStyles('.hero-title', {
     opacity: '0',
     transform: 'translateX(-30px)'
-    // 注意：如果元素原本有其他 transform，这里会覆盖。
-    // 如果原本有 rotate/scale，需要写成 transform: 'translateX(-30px) scale(1)...'
-    // 鉴于这是初始加载动画，通常假设初始没有其他 transform
   });
 
-  // Hero Description: opacity 0, translateY 20px
   setStyles('.hero-description', {
     opacity: '0',
     transform: 'translateY(20px)'
   });
 
-  // Hero Buttons: opacity 0, scale 0.8
-  // 注意：scale 需要保留默认的 translate(0,0) 以防布局偏移，但通常只写 scale 即可
   setStyles('.hero-buttons .btn', {
     opacity: '0',
     transform: 'scale(0.8)'
   });
 
-  // Hero Social Icons: opacity 0, scale 0, rotate 180deg
-  // 多个 transform 属性需要用空格隔开
   setStyles('.hero-social .social-icon', {
     opacity: '0',
     transform: 'scale(0) rotate(180deg)'
   });
 
-  // Profile Image: opacity 0, scale 0.8, rotate 180deg
   setStyles('.profile-image', {
     opacity: '0',
     transform: 'scale(0.8) rotate(180deg)'
   });
 
-  // Floating Badges: opacity 0, scale 0
   setStyles('.floating-badge', {
     opacity: '0',
     transform: 'scale(0)'
   });
 
-  // 4. 【关键】强制重绘 (Reflow)
-  // 确保浏览器立刻应用上述“隐藏”状态，以便下一次播放时能从 0 开始
-  // 选取任意一个存在的元素触发即可
   const anyElement = document.querySelector('.hero-title') || document.querySelector('.profile-image');
   if (anyElement) {
     anyElement.getBoundingClientRect();
   }
 };
 
-// onMounted(() => {
-//   nextTick(() => {
-//     setTimeout(initHeroAnimations, 500)
-//   })
-// })
 defineExpose({
   playAnime,
   resetAnime
 });
 </script>
+
+<style scoped>
+.spotlight-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  background: var(--bg-darker, #020617);
+  pointer-events: none;
+}
+
+.spotlight-glow {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow:
+    0 0 40px 15px rgba(192, 132, 252, 0.15),
+    0 0 80px 30px rgba(192, 132, 252, 0.08);
+  opacity: 1;
+  width: 240px;
+  height: 240px;
+  transition: opacity 0.3s ease;
+}
+</style>

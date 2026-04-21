@@ -130,60 +130,71 @@ const loadSpine = async () => {
     centerSpineAnimation()
     loading.value = false
 
-    // 处理入场动画和保持动画的逻辑
-    const hasInAnim = props.in && animations.includes(props.in)
-    const hasKeepAnim = props.keep && animations.includes(props.keep)
-
-    if (hasInAnim) {
-      // 先播放入场动画（不循环）
-      playAnimation(props.in, false)
-
-      // 监听动画完成事件
-      if (completeListener) {
-        spineAnimation.state.removeListener(completeListener)
-      }
-      completeListener = {
-        complete: (entry) => {
-          if (entry.trackIndex === 0) {
-            // 入场动画播放完毕，切换到保持动画
-            if (hasKeepAnim) {
-              playAnimation(props.keep, true)
-            } else {
-              // 如果保持动画无效，回退到 animationName 或第一个动画
-              let fallbackAnim = props.animationName
-              if (!fallbackAnim || !animations.includes(fallbackAnim)) {
-                fallbackAnim = animations[0]
-                console.warn(`Keep animation "${props.keep}" not found, using fallback: "${fallbackAnim}"`)
-              }
-              playAnimation(fallbackAnim, props.loop)
-            }
-            // 移除监听器，避免重复触发
-            if (spineAnimation && completeListener) {
-              spineAnimation.state.removeListener(completeListener)
-              completeListener = null
-            }
-          }
-        }
-      }
-      spineAnimation.state.addListener(completeListener)
-    } else if (hasKeepAnim) {
-      // 没有入场动画，直接播放保持动画（循环）
-      playAnimation(props.keep, true)
-    } else {
-      // 回退到原有的 animationName 逻辑
-      let targetAnim = props.animationName
-      if (!targetAnim || !animations.includes(targetAnim)) {
-        targetAnim = animations[0]
-        console.warn(`Animation "${props.animationName}" not found, using "${targetAnim}"`)
-      }
-      playAnimation(targetAnim, props.loop)
-    }
+    // 播放入场 + 保持动画序列
+    playInKeepSequence()
   } catch (err) {
     console.error('Failed to load spine animation:', err)
     error.value = err.message || 'Failed to load animation'
     loading.value = false
   }
 }
+
+// 播放入场动画 → 保持动画序列（可被外部重复调用）
+const playInKeepSequence = () => {
+  if (!spineAnimation) return
+  const animations = spineAnimation.spineData.animations.map(anim => anim.name)
+  const hasInAnim = props.in && animations.includes(props.in)
+  const hasKeepAnim = props.keep && animations.includes(props.keep)
+
+  // 清除上一次的 complete 监听器
+  if (completeListener && spineAnimation) {
+    spineAnimation.state.removeListener(completeListener)
+    completeListener = null
+  }
+
+  if (hasInAnim) {
+    playAnimation(props.in, false)
+
+    completeListener = {
+      complete: (entry) => {
+        if (entry.trackIndex === 0) {
+          if (hasKeepAnim) {
+            playAnimation(props.keep, true)
+          } else {
+            let fallbackAnim = props.animationName
+            if (!fallbackAnim || !animations.includes(fallbackAnim)) {
+              fallbackAnim = animations[0]
+            }
+            playAnimation(fallbackAnim, props.loop)
+          }
+          if (spineAnimation && completeListener) {
+            spineAnimation.state.removeListener(completeListener)
+            completeListener = null
+          }
+        }
+      }
+    }
+    spineAnimation.state.addListener(completeListener)
+  } else if (hasKeepAnim) {
+    playAnimation(props.keep, true)
+  } else {
+    let targetAnim = props.animationName
+    if (!targetAnim || !animations.includes(targetAnim)) {
+      targetAnim = animations[0]
+    }
+    playAnimation(targetAnim, props.loop)
+  }
+}
+
+// 重置 Spine 动画（清空状态 → 重新播放入场序列）
+const restart = () => {
+  if (!spineAnimation) return
+  spineAnimation.state.clearTracks()
+  spineAnimation.skeleton.setToSetupPose()
+  playInKeepSequence()
+}
+
+defineExpose({ restart })
 
 // 清理资源
 const destroyPixi = () => {

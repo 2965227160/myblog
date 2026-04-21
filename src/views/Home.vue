@@ -273,6 +273,12 @@ const initFloatingBadges = () => {
 }
 onMounted(() => {
   initFloatingBadges();
+  // 首次挂载时触发 Hero section 的入场动画（含光圈扩散）
+  nextTick(() => {
+    if (sectionRefs.value[0] && typeof sectionRefs.value[0].playAnime === 'function') {
+      sectionRefs.value[0].playAnime();
+    }
+  });
 })
 </script>
 

@@ -25,6 +25,9 @@
         <button class="theme-toggle" @click="toggleTheme" :title="t('themeToggle')">
           <i :class="isDark ? 'fa fa-sun' : 'fa fa-moon'"></i>
         </button>
+        <button class="theme-color-btn" @click="showColorPicker = true" :title="t('themePicker.title')">
+          <i class="fas fa-palette"></i>
+        </button>
         <button class="menu-toggle" @click="toggleMenu" :class="{ active: isMenuOpen }">
           <span></span>
           <span></span>
@@ -32,6 +35,8 @@
         </button>
       </div>
     </nav>
+
+    <ThemeColorPicker :visible="showColorPicker" @close="showColorPicker = false" />
   </header>
 </template>
 
@@ -39,6 +44,7 @@
 import { ref, onMounted, onUnmounted, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
+import ThemeColorPicker from './ThemeColorPicker.vue'
 
 const { t, locale } = useI18n()
 const route = useRoute()
@@ -48,6 +54,7 @@ const isDark = ref(true)
 const isScrolled = ref(false)
 const isMenuOpen = ref(false)
 const currentSection = ref('/home')
+const showColorPicker = ref(false)
 
 const currentTheme = computed(() => isDark.value ? 'dark' : 'light')
 

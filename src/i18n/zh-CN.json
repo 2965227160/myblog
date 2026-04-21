@@ -82,5 +82,28 @@
     "switch": "切换语言",
     "zh": "中文",
     "en": "EN"
+  },
+  "themePicker": {
+    "title": "更换主题色",
+    "subtitle": "选择一个颜色来自定义你的主题",
+    "close": "关闭",
+    "presets": "预设配色",
+    "custom": "自定义颜色",
+    "pick": "取色器",
+    "preview": "效果预览",
+    "reset": "重置默认",
+    "apply": "应用主题",
+    "purple": "紫色",
+    "blue": "蓝色",
+    "cyan": "青色",
+    "green": "绿色",
+    "pink": "粉色",
+    "rose": "玫瑰",
+    "orange": "橙色",
+    "amber": "琥珀",
+    "teal": "蓝绿",
+    "indigo": "靛蓝",
+    "red": "红色",
+    "lime": "青柠"
   }
 }

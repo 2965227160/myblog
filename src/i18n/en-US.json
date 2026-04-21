@@ -82,5 +82,28 @@
     "switch": "Switch Language",
     "zh": "中文",
     "en": "EN"
+  },
+  "themePicker": {
+    "title": "Theme Color",
+    "subtitle": "Choose a color to customize your theme",
+    "close": "Close",
+    "presets": "Presets",
+    "custom": "Custom Color",
+    "pick": "Picker",
+    "preview": "Preview",
+    "reset": "Reset Default",
+    "apply": "Apply Theme",
+    "purple": "Purple",
+    "blue": "Blue",
+    "cyan": "Cyan",
+    "green": "Green",
+    "pink": "Pink",
+    "rose": "Rose",
+    "orange": "Orange",
+    "amber": "Amber",
+    "teal": "Teal",
+    "indigo": "Indigo",
+    "red": "Red",
+    "lime": "Lime"
   }
 }
