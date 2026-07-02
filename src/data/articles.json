@@ -36,11 +36,44 @@
     "id": 4,
     "category": "书评",
     "pic": "https://test.fukit.cn/autoupload/f/z_RejYaAtgzGyF7j7NmhEdiO_OyvX7mIgxFBfDMDErs/20260406/h1oT/800X800/119406390_p0.jpg/webp",
-    "title": "《弹丸论破雾切》读书茶话会",
+    "title": "26年2月围炉茶话会——《弹丸论破雾切1-7》（含剧透）",
     "intro": "雾切响子，一个女侦探，这部书讲述了她的前传。",
     "path": "./markdown/articles/4.md",
     "tags": "书评",
     "date": "2026-02-10",
+    "author": "zhl"
+  },
+  {
+    "id": 5,
+    "category": "算法",
+    "pic": "https://backup.fukit.cn/autoupload/f/z_RejYaAtgzGyF7j7NmhEdiO_OyvX7mIgxFBfDMDErs/20260702/3Tvc/1582X650/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_2-7-2026_211226_www.bilibili.com.jpeg/webp",
+    "title": "如何理解Dijkstra算法？",
+    "intro": "解决单源最短路径问题，适用于非负权图，本文章介绍了朴素和堆优化两种做法。",
+    "path": "./markdown/articles/6.md",
+    "tags": "算法基础,单源最短路,Dijkstra算法",
+    "date": "2026-05-20",
+    "author": "zhl"
+  },
+  {
+    "id": 6,
+    "category": "前端",
+    "pic": "https://backup.fukit.cn/autoupload/f/z_RejYaAtgzGyF7j7NmhEdiO_OyvX7mIgxFBfDMDErs/20260702/dfMu/658X424/ED120978CB14EF6312DF0CDF5F7E263B.png/webp",
+    "title": "从零开始编写并上架一个微信小程序。",
+    "intro": "微信小程序，从代码到上架流程，你不得不知的几件事。",
+    "path": "./markdown/articles/5.md",
+    "tags": "WxMiniProgram,前端",
+    "date": "2026-05-06",
+    "author": "zhl"
+  },
+  {
+    "id": 7,
+    "category": "杂谈",
+    "pic": "https://backup.fukit.cn/autoupload/f/z_RejYaAtgzGyF7j7NmhEdiO_OyvX7mIgxFBfDMDErs/20260702/UKxc/1103X568/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_2-7-2026_215121_cn.bing.com.jpeg/webp",
+    "title": "我是如何从90kg减重到75kg的。",
+    "intro": "也想减肥？我做到了半年内减重15kg，过程一定不是轻松的。",
+    "path": "./markdown/articles/7.md",
+    "tags": "狠人减肥法,节食,低热量饮食",
+    "date": "2025-07-06",
     "author": "zhl"
   }
 ]

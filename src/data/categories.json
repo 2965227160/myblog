@@ -28,5 +28,11 @@
     "name": "书评",
     "total": 1,
     "icon": "fas fa-book-open"
+  },
+  {
+    "id": 6,
+    "name": "前端",
+    "total": 1,
+    "icon": "fas fa-dashboard"
   }
 ]

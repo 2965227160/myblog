@@ -75,10 +75,10 @@ const { t } = useI18n()
 const experiences = ref([
   {
     type: 'senior',
-    year: '2023.09 - 今',
+    year: '2023.09 - 2026.06',
     current: true,
     title: '研发部-全栈工程师',
-    company: '不知名某互联网公司',
+    company: '某互联网公司',
     description: t('experience.seniorDesc'),
     achievements: [
       t('experience.seniorAchievement1'),
@@ -91,7 +91,7 @@ const experiences = ref([
     type: 'frontend',
     year: '2023.04 - 2023.09',
     title: '应用工程部-运维工程师',
-    company: '不知名某互联网公司',
+    company: '某互联网公司',
     description: t('experience.frontendDesc'),
     achievements: [
       t('experience.frontendAchievement1'),
